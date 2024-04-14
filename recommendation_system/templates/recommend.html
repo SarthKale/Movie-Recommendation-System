@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- Selected Movie Poster -->
+<div class="row justify-content-center">
+    <div class="col-md-6 mb-4">
+        <img src="{{ movie_data[0]['poster_path'] }}" class="img-fluid movie-poster" alt="{{ movie_data[0]['title'] }}">
+        <p class="recommendation-title text-center mt-2">{{ movie_data[0]['title'] }}</p>
+    </div>
+</div>
+
+<!-- Recommendations -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h2 class="recommendations-heading mb-4 text-center">Recommendations</h2>
+            <div class="row">
+                <!-- First Row Recommendations -->
+                {% for movie in movie_data[1:4] %}
+                <div class="col-md-4 mb-3">
+                    <div class="recommendation-box">
+                        <img src="{{ movie['poster_path'] }}" class="img-fluid movie-poster" alt="{{ movie['title'] }}">
+                        <p class="recommendation-title text-center mt-2">{{ movie['title'] }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <!-- Second Row Recommendations -->
+                {% for movie in movie_data[4:] %}
+                <div class="col-md-6 mb-3">
+                    <div class="recommendation-box">
+                        <img src="{{ movie['poster_path'] }}" class="img-fluid movie-poster" alt="{{ movie['title'] }}">
+                        <p class="recommendation-title text-center mt-2">{{ movie['title'] }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

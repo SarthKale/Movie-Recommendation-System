@@ -1,0 +1,7 @@
+**IMPORTANT**
+
+Download and extract the dataset from the kaggle link in the '/recommendation_system/data' folder before the execution of the application.
+
+Dataset Link: "https://www.kaggle.com/datasets/akshaypawar7/millions-of-movies"
+
+Note: After downloading the dataset and installing the packages from the requirements.txt file. Execute the 'model.ipynb' file once to create the pickle file 'recommendations_data.pkl'. This file is required for the execution of the application.

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- Random Movie Posters Carousel -->
+<div id="randomMoviesCarousel" class="carousel slide mb-4" data-ride="carousel">
+    <div class="carousel-inner">
+        {% for movie in movie_data %}
+        {% if loop.index0 % 3 == 0 %}
+        <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
+            <div class="row no-gutters">
+                {% endif %}
+                <div class="col-4 {% if not loop.last %} pr-1 {% endif %}">
+                    <img src="{{ movie['poster_path'] }}" class="d-block w-100 img-fluid" style="max-height: 300px;"
+                        alt="Image not found">
+                    <div class="text-center"><span class="image-title">{{ movie['title'] }}</span></div>
+                </div>
+                {% if loop.index0 % 3 == 2 or loop.last %}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#randomMoviesCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#randomMoviesCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<style>
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .image-title {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: x-large;
+        color: #ccd;
+    }
+</style>
+
+<script>
+    function nextSlide() {
+        var activeItem = document.querySelector('.carousel-item.active');
+        if (activeItem.nextElementSibling) {
+            activeItem.classList.remove('active');
+            activeItem.nextElementSibling.classList.add('active');
+        } else {
+            var firstItem = document.querySelector('.carousel-item:first-child');
+            activeItem.classList.remove('active');
+            firstItem.classList.add('active');
+        }
+    }
+
+    function prevSlide() {
+        var activeItem = document.querySelector('.carousel-item.active');
+        if (activeItem.previousElementSibling) {
+            activeItem.classList.remove('active');
+            activeItem.previousElementSibling.classList.add('active');
+        } else {
+            var lastItem = document.querySelector('.carousel-item:last-child');
+            activeItem.classList.remove('active');
+            lastItem.classList.add('active');
+        }
+    }
+
+    // Add event listener for 'next' arrow click
+    document.querySelector('.carousel-control-next').addEventListener('click', function () {
+        nextSlide();
+        clearInterval(intervalId);
+    });
+
+    // Add event listener for 'previous' arrow click
+    document.querySelector('.carousel-control-prev').addEventListener('click', function () {
+        prevSlide();
+        clearInterval(intervalId);
+    });
+
+
+    // Automatic sliding after every 5 seconds
+    setInterval(nextSlide, 5000);
+</script>
+
+{% endblock %}

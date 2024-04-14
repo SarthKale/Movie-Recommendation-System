@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar {
+            background-color: #444 !important;
+        }
+
+        .search-bar {
+            border-radius: 20px;
+            background-color: #222;
+            padding: 10px;
+        }
+
+        .input-group {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .input-group-append {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Movie Recommender</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Movie Recommendation System</h1>
+
+        <!-- Search Bar -->
+        <form action="/recommendation" method="post">
+            <div class="input-group mb-4 py-4 justify-content-center">
+                <input type="text" class="form-control rounded-pill" placeholder="Search for a movie..."
+                    name="movie_title">
+                <div class="input-group-append">
+                    <button class="btn btn-primary rounded-pill" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
