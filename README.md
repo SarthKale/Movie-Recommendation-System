@@ -40,6 +40,8 @@ docker-compose -f docker-compose.yml up
 
 Open your browser, type `localhost` into the search bar, and press enter.
 
+![Spotify-Clone Logo](images/home_page.png)
+
 ## Technologies Used
 
 - **Python**: Backend programming language.
