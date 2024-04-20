@@ -1,6 +1,6 @@
 # Movie Recommendation System
 
-This Movie Recommendation System is a Python Flask web application that provides movie recommendations. The application features a home page displaying six randomly selected movie titles each time it's loaded, and a recommendation page that shows five recommended movies based on a user search query.
+Movie Recommendation System offers users personalized movie suggestions. Upon loading, the home page presents six randomly chosen movie titles. Additionally, the application includes a recommendation page that presents five movie recommendations in response to a user's search query.
 
 ## Requirements
 
@@ -10,15 +10,35 @@ This Movie Recommendation System is a Python Flask web application that provides
 ## Getting Started
 To clone this repository, run the following in a terminal.
 
-```
-https://github.com/SarthKale/Movie-Recommendation-System.git
-cd .\Movie-Recommendation-System\
+```bash
+git clone https://github.com/SarthKale/Movie-Recommendation-System.git
+cd Movie-Recommendation-System
 ```
 
 ## Features
 
 - **Random Movie Display**: The home page randomly displays six movie titles every time it is visited.
-- **Search and Recommend**: Users can search for a movie using the search box in the navigation bar. The system then displays five related movie recommendations on the recommendation page.
+- **Search and Recommend**: Users can search for a movie using the search bar. The system then displays five related movie recommendations on the recommendations page.
+
+## Run Application
+You can run this application in 2 ways - 1. Locally, 2. Inside Docker.
+
+### Run Locally
+
+Make sure you have python3.9 installed on your system.
+```bash
+pip install --no-cache-dir -r requirements.txt
+python main.py
+```
+
+### Run Inside a Docker Container
+
+```bash
+docker-compose -f docker-compose.yml build
+docker-compose -f docker-compose.yml up
+```
+
+Open your browser, type `localhost` into the search bar, and press enter.
 
 ## Technologies Used
 
@@ -27,17 +47,5 @@ cd .\Movie-Recommendation-System\
 - **HTML/CSS/JavaScript**: Used for creating the frontend.
 - **Bootstrap**: For responsive design.
 
-## Dataset
-
-The dataset used in this project is large and not included in the repository. Please download the dataset from **"https://www.kaggle.com/datasets/akshaypawar7/millions-of-movies"**. Follow the instructions on Kaggle to set up your dataset correctly in the './recommendation_system/data' folder.
-
-#### **Note: After downloading the dataset and installing the packages from the requirements.txt file. Execute the 'model.ipynb' file once to create the pickle file 'recommendations_data.pkl'. This file is required for the execution of the application** 
-
-## Usage
-
-- Visit the home page to see six randomly selected movies.
-- Use the search box to find movies. Submitting the search will redirect you to the recommendation page with five suggested movies based on your search.
-
-## Credits
-
-This project was created by **_Sarthak Kale_**
+## Author
+Sarthak Kale

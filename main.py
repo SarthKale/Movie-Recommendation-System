@@ -23,7 +23,7 @@ def recommendation():
     # Dummy example: Just pass a list of recommended movies
     recommended_movies = [{}]
     if request.method == 'POST':
-        movie_title = str(request.form['movie_title'])
+        movie_title = str(request.form['movie_title']).title()
         recommended_movies = app_obj.get_recommended_movies(movie_title)
     return render_template('recommend.html', movie_data=recommended_movies)
 
