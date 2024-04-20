@@ -2,6 +2,19 @@
 
 This Movie Recommendation System is a Python Flask web application that provides movie recommendations. The application features a home page displaying six randomly selected movie titles each time it's loaded, and a recommendation page that shows five recommended movies based on a user search query.
 
+## Requirements
+
+- docker
+- docker-compose
+
+## Getting Started
+To clone this repository, run the following in a terminal.
+
+```
+https://github.com/SarthKale/Movie-Recommendation-System.git
+cd .\Movie-Recommendation-System\
+```
+
 ## Features
 
 - **Random Movie Display**: The home page randomly displays six movie titles every time it is visited.
