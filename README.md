@@ -25,7 +25,7 @@ You can run this application in 2 ways - 1. Locally, 2. Inside Docker.
 
 ### Run Locally
 
-Make sure you have python3.9 installed on your system.
+Make sure you have python3.10 or higher installed on your system.
 ```bash
 pip install --no-cache-dir -r requirements.txt
 python main.py
@@ -38,9 +38,9 @@ docker-compose -f docker-compose.yml build
 docker-compose -f docker-compose.yml up
 ```
 
-Open your browser, type `localhost` into the search bar, and press enter.
+Open your browser, go to `localhost` to access the app.
 
-![Spotify-Clone Logo](images/home_page.png)
+![Home Page](images/home_page.png)
 
 ## Technologies Used
 

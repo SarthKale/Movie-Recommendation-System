@@ -25,6 +25,8 @@ def recommendation():
     if request.method == 'POST':
         movie_title = str(request.form['movie_title']).title()
         recommended_movies = app_obj.get_recommended_movies(movie_title)
+        if len(recommended_movies) == 0:
+            recommended_movies.extend(app_obj.get_random_movies())
     return render_template('recommend.html', movie_data=recommended_movies)
 
 
