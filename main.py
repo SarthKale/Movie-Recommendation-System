@@ -1,5 +1,5 @@
 """MovieRecommendation Flask project documentation"""
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from recommendation_system.src.movie_recommender import MovieRecommendation
 
 app = Flask(__name__, template_folder='./recommendation_system/templates')
@@ -27,6 +27,7 @@ def recommendation():
         recommended_movies = app_obj.get_recommended_movies(movie_title)
         if len(recommended_movies) == 0:
             recommended_movies.extend(app_obj.get_random_movies())
+            return redirect('/')
     return render_template('recommend.html', movie_data=recommended_movies)
 
 
